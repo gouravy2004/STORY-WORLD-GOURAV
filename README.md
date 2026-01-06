@@ -1,4 +1,4 @@
-# shayari-website                                                                                                                                                            
+# shayari-website GOURAVYADAV                                                                                                                                                           
 <title>BEST SHAYARI❤️GY| GOURAVYADAV</title>
 
 <style>
@@ -110,14 +110,7 @@ footer{
         <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
 
-    <div class="shayari-card">
-        <p>
-            खुद पर भरोसा रखो,<br>
-            क्योंकि वही सबसे बड़ी ताकत है।
-        </p>
-        <button class="copy-btn" onclick="copyText(this)">Copy</button>
-    </div>
-<script>
+    
 
 <div class="shayari-card">
 <p>
