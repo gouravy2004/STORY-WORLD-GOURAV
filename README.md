@@ -1,8 +1,4 @@
-# shayari-website                                                                                                                                                                      
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+# shayari-website                                                                                                                                                            
 <title>BEST SHAYARI❤️GY| GOURAVYADAV</title>
 
 <style>
@@ -122,13 +118,8 @@ footer{
         <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
 <script>
-function copyText(btn){
-    const text = btn.previousElementSibling.innerText;
-    navigator.clipboard.writeText(text);
-    btn.innerText = "Copied!";
-    setTimeout(()=>btn.innerText="Copy",1500);
-}
-</script>
+
+
 
 </body>
 </html>
