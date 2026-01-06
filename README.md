@@ -76,7 +76,7 @@ footer{
     color:#aaa;
 }
 </style>
-</head>
+
 
 <body>
 
