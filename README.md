@@ -1,4 +1,4 @@
-# shayari-website                                                                                                                                                                       <!DOCTYPE html>
+# shayari-website                                                                                                                                                                      
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
