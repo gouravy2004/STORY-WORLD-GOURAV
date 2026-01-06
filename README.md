@@ -119,10 +119,6 @@ footer{
     </div>
 <script>
 
-
-
-</body>
-</html>
 <div class="shayari-card">
 <p>
 तेरी एक मुस्कान मेरी दुनिया बदल देती है,<br>
