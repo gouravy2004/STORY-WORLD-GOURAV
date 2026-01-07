@@ -109,7 +109,7 @@ motivation:[
 आज दर्द सह लो चुपचाप,<br>
 कल यही दर्द आपकी ताक़त बनेगा।`
 ]                                                                                                                                                                ]      
-};
+
 
 function showCategory(type){
   const box = document.getElementById("shayariBox");
