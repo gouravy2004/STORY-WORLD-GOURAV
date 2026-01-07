@@ -1,4 +1,3 @@
-<title>BEST SHAYARI❤️GY| GOURAVYADAV</title
 
 <!-- SHAYARI SECTION -->
 <div class="shayari-section">
@@ -136,9 +135,5 @@ showCategory('love');
 </script>
 
 
-
-<footer>
-    © 2026 |SHAYARI BY GOURAVYADAV
-</footer>
 
 
