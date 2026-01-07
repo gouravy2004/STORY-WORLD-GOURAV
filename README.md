@@ -132,7 +132,11 @@ function copyText(btn){
 
 // default load
 showCategory('love');
-</script>
+</script><section id="contact" style="max-width:900px;margin:40px auto 0;padding:25px;text-align:center;background:rgba(255,255,255,0.08);border-radius:20px;box-shadow:0 0 25px rgba(0,0,0,0.4);">
+<h2 style="color:#00fff0;margin-bottom:10px;text-shadow:0 0 5px #00fff0;">📧 Contact Me</h2>
+<p style="margin-bottom:10px;">अगर आप मुझसे सीधे संपर्क करना चाहते हैं तो नीचे क्लिक करें</p>
+<a href="mailto:gouravy33o@gmail.com" style="display:inline-block;margin-top:10px;padding:10px 20px;border-radius:25px;background:#00fff0;color:#000;font-weight:600;text-decoration:none;box-shadow:0 0 15px #00fff0;">Send Email</a>
+</section>
 <footer>
 © 2026 | Designed with ❤️ by Gourav Yadav
 </footer>
