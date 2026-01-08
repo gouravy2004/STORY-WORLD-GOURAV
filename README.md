@@ -154,12 +154,7 @@ likeButtons.forEach(btn => {
 });
 </script>
 </body>
-</html>
-
-                                                                                   
-</script>
-</head>
-
+</html>                                                                               
 <body>
 <h1>✨ Gourav Shayari World ✨</h1>
 
@@ -227,7 +222,7 @@ likeButtons.forEach(btn => {
 
 </div>
 </body>
-</html>
+
 <!-- LIFE -->
 <div class="column">
 <h2>🌿 Life</h2>
