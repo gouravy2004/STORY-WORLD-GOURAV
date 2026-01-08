@@ -260,14 +260,61 @@ function generateShayari(){
 }
 </script>
 <button id="pauseBtn" onclick="toggleVoice()">⏸ Pause</button>
+<div id="lyricsBox"></div>
+<div class="neon-name">
+  Gourav <span>Yadav</span>
+</div>
+.neon-name{
+  font-size:36px;
+  font-weight:800;
+  text-align:center;
+  margin:30px 0;
+  color:#fff;
+  text-shadow:
+    0 0 5px #00f7ff,
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
+  animation: glow 2s infinite alternate;
+}
 
-    <p class="copyright">
-        © 2026 | Designed with ❤️ by Gourav Yadav
-    </p>
-</footer>
+.neon-name span{
+  color:#ff00c8;
+  text-shadow:
+    0 0 5px #ff00c8,
+    0 0 15px #ff00c8,
+    0 0 30px #ff00c8;
+}
 
- 
+/* Glow animation */
+@keyframes glow{
+  from{
+    text-shadow:
+      0 0 5px #00f7ff,
+      0 0 15px #00f7ff,
+      0 0 30px #00f7ff;
+  }
+  to{
+    text-shadow:
+      0 0 10px #00f7ff,
+      0 0 25px #00f7ff,
+      0 0 50px #00f7ff;
+  }
+}
+.neon-name{
+  animation: flicker 3s infinite;
+}
 
+@keyframes flicker{
+  0%,18%,22%,25%,53%,57%,100%{
+    opacity:1;
+  }
+  20%,24%,55%{
+    opacity:0.6;
+  }
+}
+
+   
 
 
 
