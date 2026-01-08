@@ -4,7 +4,80 @@ SHAYARI FOR GOURAVYADAV
 <meta charset="UTF-8">
 <title>Gourav Shayari World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+<style>                                                                                                                                                                         /* =========================
+   📱 Mobile Responsive
+   ========================= */
+
+/* Tablet & Mobile */
+@media screen and (max-width: 768px){
+
+  h1{
+    font-size:22px;
+    padding:15px;
+  }
+
+  .container{
+    grid-template-columns:1fr;   /* 👈 Line by line columns */
+    gap:15px;
+    padding:12px;
+  }
+
+  .column{
+    padding:12px;
+  }
+
+  .column h2{
+    font-size:18px;
+  }
+
+  .shayari{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .copy-btn,
+  .like-btn{
+    font-size:13px;
+    padding:6px 14px;
+  }
+
+  #themeToggle{
+    font-size:13px;
+    padding:7px 16px;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px){
+
+  h1{
+    font-size:20px;
+  }
+
+  .container{
+    padding:10px;
+  }
+
+  .column{
+    border-radius:12px;
+  }
+
+  .shayari{
+    font-size:14px;
+    padding:10px;
+  }
+
+  .copy-btn,
+  .like-btn{
+    width:100%;          /* 👈 Full width buttons */
+    margin-top:6px;
+  }
+
+  #themeToggle{
+    width:90%;
+  }
+}
+
 /* Like Button */
 .like-btn{
   margin-top:5px;
