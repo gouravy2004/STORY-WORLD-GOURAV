@@ -201,28 +201,39 @@ function filterShayari(category, btn){
 
 </body>
 </html>
-<div class="card love">
-  <h3>❤️ Love</h3>
+<img width="12" height="3" alt="image" src="https://github.com/user-attachments/assets/3dfaaf02-044d-4a21-bede-5828d351f3bc" />
+<button id="themeToggle" onclick="toggleTheme()">🌙</button>
 
-  <div class="shayari" id="shayari1">
-तेरी मोहब्बत में खुद को खो दिया,
-हर ख्वाब तेरे नाम कर दिया।
-तू साथ हो तो डर नहीं लगता,
-तेरे बिना सब अधूरा लगता।
-तेरी हँसी ही मेरी पहचान,
-तू ही मेरा सुकून, तू ही मेरी जान।
-  </div>
+<footer class="profile-footer">
+    <div class="profile-box">
+        <img src="profile.jpg" alt="Profile" class="profile-pic">
 
-  <div class="action-bar">
-    <button class="copy-btn" onclick="copyShayari('shayari1')">📋 Copy</button>
-    <button class="like-btn" onclick="likeShayari(this)">❤️ <span>0</span></button>
-  </div>
+        <h2 class="neon-name">Gourav Yadav</h2>
+
+        <p class="profile-tag">
+            Long Shayari | Love • Sad • Attitude • Life
+        </p>
+
+        <div class="social-icons">
+            <a href="https://instagram.com/" target="_blank">📷</a>
+            <a href="mailto:yourgmail@gmail.com">✉️</a>
+        </div>
+    </div>
+
+    <p class="copyright">
+        © 2026 | Designed with ❤️ by Gourav Yadav
+    </p>
+</footer>
+<div class="load-more-box">
+    <button id="loadMoreBtn" onclick="loadMore()">
+        🔄 Load More Shayari
+    </button>
 </div>
+<section class="trending-section">
+  <h2>🔥 Trending Shayari</h2>
+  <div id="trendingContainer" class="container"></div>
+</section>
 
-
-
-  <button class="copy-btn" onclick="copyShayari('s1')">📋 Copy</button>
-</div>
 
 
 
