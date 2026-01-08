@@ -234,6 +234,12 @@ likeButtons.forEach(btn => {
 <h1>✨ Gourav Shayari World ✨</h1>
 
 <div class="container">
+<div class="filter-buttons">
+  <button class="filter-btn active" onclick="filterShayari('all')">All</button>
+  <button class="filter-btn" onclick="filterShayari('love')">❤️ Love</button>
+  <button class="filter-btn" onclick="filterShayari('romanticlife')">💞 Romantic Life</button>
+  <button class="filter-btn" onclick="filterShayari('saddeep')">💔 Sad Deep</button>
+</div>
 
 <!-- LOVE -->
 <div class="column">
