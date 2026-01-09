@@ -1,234 +1,84 @@
 SHAYARI FOR GOURAVYADAV
+<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <title>Gourav Shayari World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>                                                                                                                                                                         /* =========================
-   📱 Mobile Responsive
-   ========================= */
 
-/* Tablet & Mobile */
-@media screen and (max-width: 768px){
-
-  h1{
-    font-size:22px;
-    padding:15px;
-  }
-
-  .container{
-    grid-template-columns:1fr;   /* 👈 Line by line columns */
-    gap:15px;
-    padding:12px;
-  }
-
-  .column{
-    padding:12px;
-  }
-
-  .column h2{
-    font-size:18px;
-  }
-
-  .shayari{
-    font-size:15px;
-    line-height:1.7;
-  }
-
-  .copy-btn,
-  .like-btn{
-    font-size:13px;
-    padding:6px 14px;
-  }
-
-  #themeToggle{
-    font-size:13px;
-    padding:7px 16px;
-  }
-}
-
-/* Small Mobile */
-@media screen and (max-width: 480px){
-
-  h1{
-    font-size:20px;
-  }
-
-  .container{
-    padding:10px;
-  }
-
-  .column{
-    border-radius:12px;
-  }
-
-  .shayari{
-    font-size:14px;
-    padding:10px;
-  }
-
-  .copy-btn,
-  .like-btn{
-    width:100%;          /* 👈 Full width buttons */
-    margin-top:6px;
-  }
-
-  #themeToggle{
-    width:90%;
-  }
-}
-
-/* Like Button */
-.like-btn{
-  margin-top:5px;
-  background:#ff69b4; /* Pink */
-  color:#fff;
-  border:none;
-  padding:5px 12px;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:bold;
-  transition:0.3s;
-}
-.like-btn:hover{
-  transform: scale(1.1);
-}
-.like-btn.liked{
-  background:#ff1493; /* Dark Pink */
-  color:#fff;
-}
-
-/* Theme variables */
-:root {
-  --bg-gradient-dark: linear-gradient(135deg,#330033,#660066,#990099); /* Dark Pink gradient */
-  --bg-gradient-light: linear-gradient(135deg,#ffffff,#ffe6f0,#ffcce6); /* Light Pink gradient */
-  --text-color-dark: #ffffff;
-  --text-color-light: #000000;
-  --column-bg-dark: rgba(255,255,255,0.1);
-  --column-bg-light: rgba(255,20,147,0.05);
-  --shayari-bg-dark: rgba(255,255,255,0.15);
-  --shayari-bg-light: rgba(255,192,203,0.2);
-}
-
-/* Global styles */
+<style>
 body{
   margin:0;
-  font-family:Segoe UI, sans-serif;
-  background: var(--bg-gradient-dark);
-  color: var(--text-color-dark);
-  transition: 0.5s;
+  font-family: 'Segoe UI', sans-serif;
+  background:#fff0f6;
 }
-h1{
-  text-align:center;
+
+/* Header */
+header{
+  background:#ff5fa2;
+  color:white;
   padding:20px;
-  color:#ff69b4; /* Pink */
-}
-
-.container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-  padding:20px;
-}
-
-.column{
-  background: var(--column-bg-dark);
-  padding:15px;
-  border-radius:15px;
-  transition:0.5s;
-}
-
-.column h2{
   text-align:center;
-  color:#ff69b4; /* Pink */
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  padding-bottom:8px;
-}
-
-.shayari{
-  background: var(--shayari-bg-dark);
-  padding:12px;
-  margin:12px 0;
-  border-radius:12px;
-  line-height:1.8;
-  font-size:14px;
-  transition:0.5s;
-}
-
-/* Copy Button */
-.copy-btn{
-  margin-top:8px;
-  background:#ff69b4; /* Pink */
-  border:none;
-  padding:6px 12px;
-  border-radius:20px;
-  cursor:pointer;
-  color:#fff;
-}
-.copy-btn:hover{
-  background:#ff1493; /* Dark Pink */
-}
-
-/* Theme Toggle Button */
-#themeToggle{
-  padding:8px 20px;
-  border-radius:20px;
-  border:none;
-  cursor:pointer;
-  background:#ff69b4;
-  color:#fff;
+  font-size:24px;
   font-weight:bold;
-  box-shadow:0 0 10px #ff69b4;
-  transition:0.3s;
 }
 
-/* Dark / Light theme toggle */
-.light-theme{
-  background: var(--bg-gradient-light) !important;
-  color: var(--text-color-light) !important;
+/* Category Menu */
+nav{
+  display:flex;
+  overflow-x:auto;
+  background:white;
+  padding:10px;
+  gap:10px;
 }
-.light-theme .column{
-  background: var(--column-bg-light) !important;
+nav button{
+  border:none;
+  background:#ffd6e8;
+  color:#ff2f7d;
+  padding:10px 18px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
 }
-.light-theme .shayari{
-  background: var(--shayari-bg-light) !important;
+nav button:hover{
+  background:#ff5fa2;
+  color:white;
 }
-.light-theme .copy-btn{
-  background:#ff69b4 !important;
-  color:#fff !important;
+
+/* Shayari Card */
+.container{
+  padding:15px;
 }
-.light-theme .like-btn{
-  background:#ff69b4 !important;
-  color:#fff !important;
+.card{
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:20px;
+  box-shadow:0 8px 18px rgba(255,95,162,0.2);
+}
+.card h3{
+  color:#ff2f7d;
+  margin-bottom:10px;
+}
+.card p{
+  color:#444;
+  line-height:1.8;
+  font-size:16px;
+  white-space:pre-line;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:15px;
+  background:#ff5fa2;
+  color:white;
+  font-size:14px;
 }
 </style>
-</head>                                                                       
-                                                                                                                                                      <body>
-<h1>Shayari World</h1>
-<div style="text-align:center; margin:15px;">
-  <button id="themeToggle" onclick="toggleTheme()">🌙 Dark / Light Toggle</button>
-</div>
+</head>
 
-<script>
-function toggleTheme(){
-  document.body.classList.toggle('light-theme');
-}
-
-// Like button functionality
-const likeButtons = document.querySelectorAll('.like-btn');
-likeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const countSpan = btn.querySelector('.count');
-    let count = countSpan ? parseInt(countSpan.textContent) : 0;
-    if(countSpan) countSpan.textContent = count + 1;
-    btn.style.background = '#ff1493'; // Dark Pink when liked
-    btn.style.color = '#fff';
-  });
-});
-</script>
-</body>
-</html>                                                                               
-<body>/
+<body>
 
 
 <h1>✨ Gourav Shayari World ✨</h1>
