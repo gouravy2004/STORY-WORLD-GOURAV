@@ -1,602 +1,343 @@
-SHAYARI FOR GOURAVYADAV
-<!DOCTYPE html>
-<html lang="hi">
+❤️STORY WORLD ❤️
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gourav Shayari World</title>
+<title>Gourav Yadav Story World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* =========================
-   🎨 THEME VARIABLES
-========================= */
-:root{
-  --pink:#ff69b4;
-  --darkpink:#ff1493;
-
-  --bg-dark:linear-gradient(135deg,#330033,#660066,#990099);
-  --bg-light:linear-gradient(135deg,#ffffff,#ffe6f0,#ffcce6);
-
-  --text-dark:#ffffff;
-  --text-light:#000000;
-
-  --card-dark:rgba(255,255,255,0.12);
-  --card-light:rgba(255,105,180,0.08);
+:root {
+  --bg-color:#fff;
+  --text-color:#111;
+  --card-bg:#ffe6f0;
+  --btn-bg:#ff4d6d;
+  --btn-hover:#ff85b3;
 }
 
-/* =========================
-   🌍 GLOBAL
-========================= */
+body.dark{
+  --bg-color:#111;
+  --text-color:#fff;
+  --card-bg:#111;
+  --btn-bg:#ff4d6d;
+  --btn-hover:#ff85b3;
+}
+
 body{
   margin:0;
-  font-family:Segoe UI, sans-serif;
-  background:var(--bg-dark);
-  color:var(--text-dark);
-  transition:0.5s;
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
-h1{
-  text-align:center;
-  padding:18px;
-  color:var(--pink);
-  text-shadow:0 0 10px rgba(255,105,180,0.6);
-}
-
-/* =========================
-   🔘 THEME BUTTON
-========================= */
-#themeToggle{
-  padding:8px 22px;
-  border-radius:25px;
+/* THEME TOGGLE BUTTON */
+.theme-btn{
+  position:fixed;
+  top:10px; right:10px;
+  padding:8px 15px;
   border:none;
-  background:var(--pink);
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 0 15px var(--pink);
-}
-
-/* =========================
-   📦 LAYOUT
-========================= */
-.container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-  padding:20px;
-}
-
-.column{
-  background:var(--card-dark);
-  padding:15px;
-  border-radius:18px;
-  transition:0.4s;
-}
-.column:hover{
-  transform:translateY(-6px);
-}
-
-.column h2{
-  text-align:center;
-  color:var(--pink);
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  padding-bottom:8px;
-}
-
-/* =========================
-   ✍ SHAYARI
-========================= */
-.shayari{
-  background:rgba(255,255,255,0.15);
-  padding:14px;
-  margin:14px 0;
-  border-radius:14px;
-  line-height:1.8;
-  font-size:15px;
-}
-
-/* =========================
-   ❤️ BUTTONS
-========================= */
-.btns{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.copy-btn,
-.like-btn{
-  background:var(--pink);
-  border:none;
-  padding:6px 16px;
   border-radius:20px;
+  background:var(--btn-bg);
   color:#fff;
+  cursor:pointer;
+  z-index:10;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:20px;
+  font-size:24px;
+  font-weight:bold;
+  color:#ff4d6d;
+}
+
+/* CATEGORY BUTTONS */
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
+
+.categories button{
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  background:#ccc;
+  color:#111;
   cursor:pointer;
   font-weight:bold;
   transition:0.3s;
 }
-.copy-btn:hover,
-.like-btn:hover{
-  background:var(--darkpink);
-  transform:scale(1.1);
+
+.categories button.active{
+  background:var(--btn-bg);
+  color:#fff;
 }
 
-/* =========================
-   🌙 LIGHT THEME
-========================= */
-.light-theme{
-  background:var(--bg-light);
-  color:var(--text-light);
-}
-.light-theme .column{
-  background:var(--card-light);
-}
-.light-theme .shayari{
-  background:rgba(255,192,203,0.25);
+/* STORY BOX */
+.story-container{
+  max-width:400px;
+  height:75vh;
+  margin:auto;
+  background: var(--card-bg);
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 0 25px rgba(255,105,180,0.5);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  touch-action: pan-y;
 }
 
-/* =========================
-   📱 MOBILE
-========================= */
-@media(max-width:600px){
-  h1{font-size:20px;}
-  .copy-btn,.like-btn{width:100%;}
+/* STORY LINES */
+.story-line{
+  opacity:0;
+  animation:fade 1s forwards;
+  margin:8px 0;
+  font-size:18px;
+}
+@keyframes fade{ to{opacity:1} }
+
+/* PROGRESS BAR */
+.progress{
+  width:90%;
+  height:5px;
+  background:#ccc;
+  border-radius:5px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:var(--btn-bg);
+  animation:load 7s linear forwards;
+}
+@keyframes load{ to{width:100%} }
+
+/* DOTS */
+.dots{
+  display:flex;
+  gap:5px;
+  margin-top:10px;
+}
+.dot{
+  width:10px; height:10px;
+  background:#ccc;
+  border-radius:50%;
+  transition:0.3s;
+}
+.dot.active{
+  background:var(--btn-bg);
+}
+
+/* ACTION BUTTONS */
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:15px;
+}
+.actions button{
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  background:var(--btn-bg);
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+.actions button:hover{
+  background:var(--btn-hover);
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:15px;
+  font-size:16px;
+  color:#ff4d6d;
 }
 </style>
 </head>
 
-<body>
+<body class="dark">
 
-<h1>🌸 Gourav Shayari World 🌸</h1>
-
-<div style="text-align:center;margin-bottom:15px;">
-  <button id="themeToggle">🌙 Dark / Light Mode</button>
+<!-- HEADER -->
+<div class="header">
+  Welcome to Gourav Yadav's Story World ❤️
 </div>
 
-<div class="container">
+<button class="theme-btn" onclick="toggleTheme()">🌙 Theme</button>
 
-<!-- LOVE -->
-<div class="column">
-<h2>💖 Love</h2>
-
-<div class="shayari">
-तेरी एक मुस्कान मेरी दुनिया बदल देती है,  
-तेरी एक बात मेरी हर तकलीफ मिटा देती है।  
-तू पास हो तो सब आसान लगता है,  
-तू दूर हो तो दिल वीरान लगता है।  
+<!-- CATEGORY BUTTONS -->
+<div class="categories">
+  <button class="active" onclick="changeCategory('love',this)">❤️ Love</button>
+  <button onclick="changeCategory('sad',this)">💔 Sad</button>
+  <button onclick="changeCategory('horror',this)">👻 Horror</button>
 </div>
 
-<div class="btns">
-<button class="copy-btn">Copy</button>
-<button class="like-btn">❤️ Like</button>
-</div>
+<!-- STORY BOX -->
+<div class="story-container" id="storyBox">
+  <div class="progress"><div class="progress-bar" id="bar"></div></div>
+  <div id="storyText"></div>
+
+  <!-- DOTS -->
+  <div class="dots" id="dots"></div>
+
+  <!-- AUDIO -->
+  <audio id="voice"></audio>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button onclick="likeStory()">❤️ Like</button>
+    <button onclick="copyStory()">📋 Copy</button>
+    <button onclick="toggleAudio()" id="audioBtn">▶️ Play Voice</button>
+  </div>
 </div>
 
-<!-- SAD -->
-<div class="column">
-<h2>💔 Sad</h2>
-
-<div class="shayari">
-खामोशी भी अब सवाल करने लगी है,  
-आँखें भी सच बोलने लगी हैं।  
-जिसे अपना समझा वही दूर चला गया,  
-अब तन्हाई भी अपनी सी लगने लगी है।
-</div>
-
-<div class="btns">
-<button class="copy-btn">Copy</button>
-<button class="like-btn">❤️ Like</button>
-</div>
-</div>
-
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Gourav Yadav. All Rights Reserved.
 </div>
 
 <script>
-/* THEME */
-document.getElementById("themeToggle").onclick=()=>{
-  document.body.classList.toggle("light-theme");
+// STORIES DATA
+const stories = {
+  love:[
+    ["उसकी मुस्कान में","मेरी पूरी दुनिया थी…","हर मुलाक़ात खास लगती थी…","और हर पल सिर्फ उसका…"],
+    ["प्यार शब्दों से नहीं…","खामोशी से समझ आता है…","जब कोई बिना कहे","सब समझ जाए…"],
+    ["तेरी आँखों में खो जाना","मेरी आदत बन गई…","हर दिन तुझसे मिलने की","उम्मीद रहती है…"],
+    ["दिल ने कहा तुझे चाहूँगा…","दिमाग ने कहा संभल…","पर दिल की सुनना","हमेशा बेहतर होता है…"],
+    ["तेरा हाथ पकड़े रहना","मुझे सुकून देता है…","हर तूफ़ान में तेरा साथ","मुझे मजबूत बनाता है…"],
+    ["चाँदनी रात में तेरा साथ","हर सपना सच लगता है…","तेरी हँसी मेरी दुनिया है…","तेरी यादें हमेशा मेरे साथ हैं…"],
+    ["हमने साथ जो सफ़र तय किया","हर मोड़ यादगार रहा…","तेरे बिना सब सूना है…","तेरी बातें दिल को छूती हैं…"],
+    ["तू मेरी सोच, तू मेरी खुशियाँ…","तेरा होना मेरे लिए सब कुछ है…","हर पल तुझसे प्यार बढ़ता है…","तेरा हाथ हमेशा थामना चाहता हूँ…"]
+  ],
+  sad:[
+    ["कुछ कहानियाँ","अधूरी रह जाती हैं…","क्योंकि वक़्त","साथ नहीं देता…"],
+    ["हम हँसते बहुत हैं…","पर अंदर","सब बिखरा होता है…"],
+    ["जुदाई ने सीखा दिया…","हर मुस्कान के पीछे","अकेलापन छुपा होता है…"],
+    ["वो चला गया…","पर यादें अब भी साथ हैं…","हर रात बस उसका ख्याल…","संग रहती है…"],
+    ["दिल टूटने का दर्द…","कभी शब्दों में नहीं आता…","बस महसूस किया जाता है…"],
+    ["तन्हाई में हमने सीखा…","हर पल यादें और भी गहरी होती हैं…"],
+    ["वक़्त ठहर नहीं सकता…","पर दिल में वो लम्हे हमेशा रह जाते हैं…"],
+    ["कुछ रिश्ते…","बस याद बनकर रह जाते हैं…","मुलाक़ातें नहीं होती…"]
+  ],
+  horror:[
+    ["रात के सन्नाटे में…","किसी ने मेरा नाम लिया…","पीछे मुड़ा…","लेकिन कोई नहीं था…"],
+    ["आईना बोला…","वो अब यहीं है…","मैं अकेला नहीं था…","कभी था ही नहीं…"],
+    ["अंधेरे कमरे में…","किसी ने धीरे से फुसफुसाया…","'तुमने देखा?'","पर कोई दिखाई नहीं दिया…"],
+    ["पुराने हवेली की खिड़की…","स्वयं बंद हुई…","और एक ठंडी हवा चली…","जो सिर्फ मेरे लिए थी…"],
+    ["सड़क पर अकेले चलते हुए…","कदमों की आवाजें…","पीछे से आती थीं…","पर कोई नहीं था…"],
+    ["रात 12 बजे…","फोन की घंटी बजी…","लेकिन स्क्रीन खाली…","कोई कॉल नहीं आया था…"],
+    ["काले पेड़ की छाया…","जैसे मेरे पीछे हिल रही थी…","मैं भागा…","पर रास्ता खत्म था…"],
+    ["किसी ने कहा…","'मैं हमेशा तुम्हारे पास रहूँगा…'","और मैं अकेला था…","पर आवाज मेरे कानों में थी…"]
+  ]
+};
+
+let currentCategory="love";
+let index=0;
+
+const storyText=document.getElementById("storyText");
+const bar=document.getElementById("bar");
+const dotsContainer=document.getElementById("dots");
+const audio=document.getElementById("voice");
+const audioBtn=document.getElementById("audioBtn");
+
+// LOAD STORY
+function loadStory(){
+  storyText.innerHTML="";
+  bar.style.animation="none";
+  bar.offsetHeight;
+  bar.style.animation="load 7s linear forwards";
+
+  stories[currentCategory][index].forEach((line,i)=>{
+    let div=document.createElement("div");
+    div.className="story-line";
+    div.style.animationDelay=`${i*0.6}s`;
+    div.innerText=line;
+    storyText.appendChild(div);
+  });
+
+  // Update dots
+  dotsContainer.innerHTML="";
+  for(let i=0;i<stories[currentCategory].length;i++){
+    let d=document.createElement("div");
+    d.className="dot";
+    if(i===index)d.classList.add("active");
+    dotsContainer.appendChild(d);
+  }
+
+  // Reset audio
+  audio.pause();
+  audio.src=""; // Add mp3 if available
+  audioBtn.innerText="▶️ Play Voice";
 }
 
-/* COPY */
-document.querySelectorAll(".copy-btn").forEach(btn=>{
-  btn.onclick=()=>{
-    const text=btn.parentElement.previousElementSibling.innerText;
-    navigator.clipboard.writeText(text);
-    btn.innerText="Copied!";
-    setTimeout(()=>btn.innerText="Copy",1000);
+// CATEGORY CHANGE
+function changeCategory(cat,btn){
+  currentCategory=cat;
+  index=0;
+  document.querySelectorAll(".categories button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  loadStory();
+}
+
+// LIKE
+function likeStory(){ alert("❤️ Story Liked!"); }
+
+// COPY
+function copyStory(){
+  let text = stories[currentCategory][index].join("\n");
+  navigator.clipboard.writeText(text);
+  alert("📋 Story Copied!");
+}
+
+// AUDIO
+function toggleAudio(){
+  if(audio.paused){ audio.play(); audioBtn.innerText="⏸ Pause Voice"; }
+  else{ audio.pause(); audioBtn.innerText="▶️ Play Voice"; }
+}
+
+// SWIPE (MOBILE)
+let startX=0;
+const storyBox=document.getElementById("storyBox");
+storyBox.addEventListener("touchstart",e=>{ startX=e.touches[0].clientX; });
+storyBox.addEventListener("touchmove",e=>{ e.preventDefault(); });
+storyBox.addEventListener("touchend",e=>{
+  let endX=e.changedTouches[0].clientX;
+  let diff = startX - endX;
+  if(Math.abs(diff) > 30){
+    if(diff > 0) index=(index+1)%stories[currentCategory].length;
+    else index=(index-1+stories[currentCategory].length)%stories[currentCategory].length;
+    loadStory();
   }
 });
-</script>
 
+// DESKTOP SWIPE (MOUSE)
+let mouseDownX=0;
+storyBox.addEventListener("mousedown", e=>{ mouseDownX = e.clientX; });
+storyBox.addEventListener("mouseup", e=>{
+  let diff = mouseDownX - e.clientX;
+  if(Math.abs(diff)>30){
+    if(diff>0) index=(index+1)%stories[currentCategory].length;
+    else index=(index-1+stories[currentCategory].length)%stories[currentCategory].length;
+    loadStory();
+  }
+});
+
+// THEME TOGGLE
+function toggleTheme(){ document.body.classList.toggle("dark"); }
+
+// INITIAL LOAD
+loadStory();
+</script>
 </body>
 </html>
-
-
-
-<h1>✨ Gourav Shayari World ✨</h1>
-
-<div class="container">
-<div class="filter-buttons">
-  <button class="filter-btn active" onclick="filterShayari('all')">All</button>
-  <button class="filter-btn" onclick="filterShayari('love')">❤️ Love</button>
-  <button class="filter-btn" onclick="filterShayari('romanticlife')">💞 Romantic Life</button>
-  <button class="filter-btn" onclick="filterShayari('saddeep')">💔 Sad Deep</button>
-</div>
-
-<!-- LOVE -->
-<div class="column">
-<h2>❤️ Love</h2>
-
-<div class="shayari" id="l1">तुम्हारी एक मुस्कान<br>मेरे हर ग़म को भुला देती है,<br>तुम्हारी हर बात<br>दिल को सुकून दे जाती है,<br>तुम साथ हो तो<br>हर रास्ता आसान लगता है,<br>तुम्हें चाहना<br>मेरी सबसे खूबसूरत आदत है।</div>
-<button class="copy-btn" onclick="copyText('l1')">Copy</button>
-
-<div class="shayari" id="l2">मोहब्बत सिर्फ पास होने का नाम नहीं,<br>यह तो दिल से निभाने का नाम है,<br>तुम दूर रहकर भी मेरे हो,<br>यही प्यार की सबसे बड़ी पहचान है।</div>
-<button class="copy-btn" onclick="copyText('l2')">Copy</button>
-
-<div class="shayari" id="l3">तेरे बिना अधूरी सी लगती है दुनिया,<br>तेरे साथ हर खुशी पूरी लगती है,<br>तू मिल जाए बस एक बार,<br>यही दुआ रोज़ दिल से निकलती है।</div>
-<button class="copy-btn" onclick="copyText('l3')">Copy</button>
-
-<div class="shayari" id="l4">तुम्हें देख कर ही सुकून मिल जाता है,<br>दिल की हर बेचैनी थम जाती है,<br>यही तो मोहब्बत है,<br>जो बिना कहे सब समझ जाती है।</div>
-<button class="copy-btn" onclick="copyText('l4')">Copy</button>
-
-<div class="shayari" id="l5">प्यार वो नहीं जो दुनिया को दिखाया जाए,<br>प्यार वो है जो दिल में निभाया जाए,<br>तू मिले या न मिले,<br>तुझे हर हाल में चाहा जाए।</div>
-<button class="copy-btn" onclick="copyText('l5')">Copy</button>
-
-<div class="shayari" id="l6">तुम मेरे ख्वाबों की हकीकत हो,<br>मेरी हर दुआ की जरूरत हो,<br>तुम साथ रहो बस हमेशा,<br>यही मेरी सबसे बड़ी ख्वाहिश हो।</div>
-<button class="copy-btn" onclick="copyText('l6')">Copy</button>
-
-<div class="shayari" id="l7">दिल ने जब भी सुकून माँगा,<br>तेरा नाम सामने आया,<br>शायद यही इश्क़ है,<br>जो हर बार तुझ तक लाया।</div>
-<button class="copy-btn" onclick="copyText('l7')">Copy</button>
-
-<div class="shayari" id="l8">तेरे साथ बिताया हर पल,<br>मेरे लिए अनमोल है,<br>तू पास हो या दूर,<br>तू हमेशा दिल के करीब है।</div>
-<button class="copy-btn" onclick="copyText('l8')">Copy</button>
-</div>
-
-<!-- ROMANTIC -->
-<div class="column">
-<h2>💕 Romantic</h2>
-
-<div class="shayari" id="r1">तेरी बाहों में आकर,<br>हर डर खो जाता है,<br>तेरे होंठों की मुस्कान से,<br>दिल फिर से जीना सीख जाता है।</div>
-<button class="copy-btn" onclick="copyText('r1')">Copy</button>
-
-<div class="shayari" id="r2">तेरी हर सांस मेरी जरूरत बन गई,<br>तेरी हर नजर मेरी चाहत बन गई,<br>अब कुछ और नहीं चाहिए,<br>तू ही मेरी पूरी दुनिया बन गई।</div>
-<button class="copy-btn" onclick="copyText('r2')">Copy</button>
-
-<div class="shayari" id="r3">तेरे हाथों को थाम कर,<br>हर रास्ता आसान लगे,<br>तेरी आँखों में खो जाऊँ,<br>हर शाम खास लगे।</div>
-<button class="copy-btn" onclick="copyText('r3')">Copy</button>
-
-<div class="shayari" id="r4">तेरे बिना अधूरी सी है हर खुशी,<br>तेरे साथ हर पल हसीन है,<br>इश्क़ सिर्फ तुझसे है,<br>और रहेगा उम्र भर यकीन है।</div>
-<button class="copy-btn" onclick="copyText('r4')">Copy</button>
-
-<div class="shayari" id="r5">तेरी एक झलक से,<br>दिल बेकाबू हो जाता है,<br>पता नहीं ये इश्क़ है या जादू,<br>जो हर बार तुझ तक ले जाता है।</div>
-<button class="copy-btn" onclick="copyText('r5')">Copy</button>
-
-<div class="shayari" id="r6">तू पास हो तो,<br>हर मौसम सुहाना लगता है,<br>तेरे बिना तो,<br>हर लम्हा वीराना लगता है।</div>
-<button class="copy-btn" onclick="copyText('r6')">Copy</button>
-
-<div class="shayari" id="r7">तेरी हंसी मेरी कमजोरी है,<br>तेरी बातें मेरी मजबूरी हैं,<br>तू साथ रहे बस हमेशा,<br>यही मेरी जिंदगी की कहानी है।</div>
-<button class="copy-btn" onclick="copyText('r7')">Copy</button>
-
-<div class="shayari" id="r8">तेरे प्यार में इतना खो गए,<br>खुद को ही भूल बैठे,<br>अब तो बस तेरा नाम,<br>हर सांस के साथ लेते हैं।</div>
-<button class="copy-btn" onclick="copyText('r8')">Copy</button>
-</div>
-
-<!-- LIFE / SAD / DEEP भी इसी structure में पूरे 8–8 shayari के साथ बन सकते हैं -->
-
-</div>
-</body>
-
-<!-- LIFE -->
-<div class="column">
-<h2>🌿 Life</h2>
-
-<div class="shayari" id="li1">
-ज़िंदगी हर रोज़ नया इम्तिहान लेती है,<br>
-कभी हँसाती है, कभी रुला देती है,<br>
-जो हालात से लड़ना सीख ले,<br>
-उसी को असली जीत मिलती है,<br>
-हार मान लेना आसान होता है,<br>
-पर खड़ा रहना ही जिंदगी है।
-</div>
-<button class="copy-btn" onclick="copyText('li1')">Copy</button>
-
-<div class="shayari" id="li2">
-ज़िंदगी किताब जैसी होती है,<br>
-हर पन्ने पर नया सबक होता है,<br>
-कुछ पन्ने खुशी के होते हैं,<br>
-कुछ दर्द से भरे होते हैं,<br>
-लेकिन पूरी किताब ही,<br>
-इंसान को मजबूत बनाती है।
-</div>
-<button class="copy-btn" onclick="copyText('li2')">Copy</button>
-
-<div class="shayari" id="li3">
-वक़्त बदलता है, हालात बदलते हैं,<br>
-आज जो अपने हैं, कल दूर हो जाते हैं,<br>
-इसी का नाम जिंदगी है,<br>
-जो हर दिन कुछ नया सिखा जाती है।
-</div>
-<button class="copy-btn" onclick="copyText('li3')">Copy</button>
-
-<div class="shayari" id="li4">
-ज़िंदगी आसान नहीं होती,<br>
-पर जीने के तरीके होते हैं,<br>
-जो मुस्कुरा कर सह ले,<br>
-वही जिंदगी के असली खिलाड़ी होते हैं।
-</div>
-<button class="copy-btn" onclick="copyText('li4')">Copy</button>
-
-<div class="shayari" id="li5">
-हर दिन खुद से लड़ना पड़ता है,<br>
-हर रात खुद को समझाना पड़ता है,<br>
-तभी जाकर कहीं,<br>
-ज़िंदगी आगे बढ़ पाती है।
-</div>
-<button class="copy-btn" onclick="copyText('li5')">Copy</button>
-
-<div class="shayari" id="li6">
-ज़िंदगी ने बहुत कुछ छीना है,<br>
-पर बहुत कुछ सिखाया भी है,<br>
-जो मिला उसी में खुश रहना,<br>
-यही जिंदगी का हुनर सिखाया है।
-</div>
-<button class="copy-btn" onclick="copyText('li6')">Copy</button>
-
-<div class="shayari" id="li7">
-आज मुश्किल है, कल आसान होगा,<br>
-हर अंधेरी रात के बाद सवेरा होगा,<br>
-बस भरोसा रख खुद पर,<br>
-तेरा भी वक्त आएगा।
-</div>
-<button class="copy-btn" onclick="copyText('li7')">Copy</button>
-
-<div class="shayari" id="li8">
-ज़िंदगी को समझने में ही,<br>
-आधी उम्र निकल जाती है,<br>
-बाकी उम्र बस,<br>
-इसे जीने में निकल जाती है।
-</div>
-<button class="copy-btn" onclick="copyText('li8')">Copy</button>
-</div>
-<!-- SAD -->
-<div class="column">
-<h2>💔 Sad</h2>
-
-<div class="shayari" id="s1">
-खामोशी सबसे बड़ा दर्द है,<br>
-जो बिना आवाज़ के सहा जाता है,<br>
-जो मुस्कुराता हुआ दिखे,<br>
-वही अंदर से सबसे ज्यादा टूटा होता है।
-</div>
-<button class="copy-btn" onclick="copyText('s1')">Copy</button>
-
-<div class="shayari" id="s2">
-जिसे अपना समझा था,<br>
-वही सबसे ज्यादा दर्द दे गया,<br>
-हम निभाते रहे रिश्ते,<br>
-और वो हमें अकेला कर गया।
-</div>
-<button class="copy-btn" onclick="copyText('s2')">Copy</button>
-
-<div class="shayari" id="s3">
-आंसू तब निकलते हैं,<br>
-जब शब्द खत्म हो जाते हैं,<br>
-और दर्द तब बढ़ता है,<br>
-जब अपने ही पराए बन जाते हैं।
-</div>
-<button class="copy-btn" onclick="copyText('s3')">Copy</button>
-
-<div class="shayari" id="s4">
-हमने चाहा बहुत शिद्दत से,<br>
-पर किस्मत को कुछ और मंज़ूर था,<br>
-दिल टूट गया हमारा,<br>
-और वो बेखबर रहा।
-</div>
-<button class="copy-btn" onclick="copyText('s4')">Copy</button>
-
-<div class="shayari" id="s5">
-अकेले रहना सीख लिया है,<br>
-अब किसी से उम्मीद नहीं रखते,<br>
-दर्द बहुत दिया लोगों ने,<br>
-अब किसी पर भरोसा नहीं करते।
-</div>
-<button class="copy-btn" onclick="copyText('s5')">Copy</button>
-
-<div class="shayari" id="s6">
-जिसे सबसे ज्यादा चाहा,<br>
-उसी ने सबसे ज्यादा रुलाया,<br>
-इश्क़ का यही सच है,<br>
-जो मिला वही पराया।
-</div>
-<button class="copy-btn" onclick="copyText('s6')">Copy</button>
-
-<div class="shayari" id="s7">
-हम चुप रहे तो सब ठीक समझ बैठे,<br>
-हम रोए नहीं तो मजबूत समझ बैठे,<br>
-किसी ने ये नहीं पूछा,<br>
-दिल पर क्या बीत रही है।
-</div>
-<button class="copy-btn" onclick="copyText('s7')">Copy</button>
-
-<div class="shayari" id="s8">
-दर्द लिखना मजबूरी बन गया,<br>
-आंसू कागज़ पर उतर आए,<br>
-जो कह न सके किसी से,<br>
-वो शायरी बनकर बाहर आए।
-</div>
-<button class="copy-btn" onclick="copyText('s8')">Copy</button>
-</div>
-<!-- DEEP -->
-<div class="column">
-<h2>🖤 Deep</h2>
-
-<div class="shayari" id="d1">
-हर इंसान अच्छा नहीं होता,<br>
-हर चेहरा सच्चा नहीं होता,<br>
-इस दुनिया में भरोसा,<br>
-सोच समझ कर करना पड़ता है।
-</div>
-<button class="copy-btn" onclick="copyText('d1')">Copy</button>
-
-<div class="shayari" id="d2">
-अकेलापन डराता नहीं,<br>
-यह सिखाता है,<br>
-कौन अपना है,<br>
-और कौन सिर्फ मतलब का।
-</div>
-<button class="copy-btn" onclick="copyText('d2')">Copy</button>
-
-<div class="shayari" id="d3">
-खामोश रहना भी एक हुनर है,<br>
-जो हर किसी के पास नहीं होता,<br>
-कभी-कभी चुप रहना ही,<br>
-सबसे बड़ा जवाब होता है।
-</div>
-<button class="copy-btn" onclick="copyText('d3')">Copy</button>
-
-<div class="shayari" id="d4">
-लोग बदलते नहीं,<br>
-बस उनके असली चेहरे सामने आ जाते हैं,<br>
-और हम समझ जाते हैं,<br>
-कि भरोसा गलत जगह किया था।
-</div>
-<button class="copy-btn" onclick="copyText('d4')">Copy</button>
-
-<div class="shayari" id="d5">
-हर रिश्ता निभाया नहीं जाता,<br>
-हर वादा पूरा नहीं होता,<br>
-कुछ लोग जिंदगी में,<br>
-सिर्फ सबक बनकर आते हैं।
-</div>
-<button class="copy-btn" onclick="copyText('d5')">Copy</button>
-
-<div class="shayari" id="d6">
-जितना कम बोलो,<br>
-उतना ज्यादा समझ पाओगे,<br>
-दुनिया शब्दों से नहीं,<br>
-इरादों से पहचानी जाती है।
-</div>
-<button class="copy-btn" onclick="copyText('d6')">Copy</button>
-
-<div class="shayari" id="d7">
-खुद से लड़ना सबसे मुश्किल होता है,<br>
-पर जो ये जीत ले,<br>
-वही जिंदगी की हर जंग जीत लेता है।
-</div>
-<button class="copy-btn" onclick="copyText('d7')">Copy</button>
-
-<div class="shayari" id="d8">
-भीड़ में रहकर भी,<br>
-अकेला महसूस करना,<br>
-यही आज की दुनिया का,<br>
-सबसे गहरा सच है।
-</div>
-<button class="copy-btn"
-
-
-  <section id="contact" class="contact-box">
-  <h2>📩 Contact Me</h2>
-
-  <form action="mailto:gouravy330@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" gouravyadav="Your Name" required>
-
-    <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<style>
-.contact-box{
-  max-width:500px;
-  margin:40px auto;
-  padding:25px;
-  background:rgba(255,255,255,0.08);
-  border-radius:20px;
-  box-shadow:0 0 25px rgba(0,0,0,0.4);
-  text-align:center;
-}
-.contact-box h2{
-  color:#00fff0;
-  margin-bottom:15px;
-  text-shadow:0 0 6px #00fff0;
-}
-.contact-box input,
-.contact-box textarea{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:none;
-  border-radius:12px;
-  outline:none;
-  font-size:1rem;
-}
-.contact-box button{
-  margin-top:10px;
-  padding:12px 30px;
-  border:none;
-  border-radius:25px;
-  background:#00fff0;
-  color:#000;
-  font-weight:600;
-  cursor:pointer;
-  box-shadow:0 0 15px #00fff0;
-  transition:0.3s;
-}
-.contact-box button:hover{
-  box-shadow:0 0 30px #00fff0;
-  transform: scale(1.05);
-}
-</style>
-<div class="social-icons">
-  <a href="https://instagram.com/yourusername" target="_blank" title="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-  </a>
-
-  <a href="mailto:yourgmail@gmail.com" title="Gmail">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
-  </a>
-</div>
-
-<style>
-@keyframes neonColor {
-  0% { box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
-  25% { box-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0; }
-  50% { box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00; }
-  75% { box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; }
-  100% { box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
-}
-
-.social-icons{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  margin-top:12px;
-}
-
-.social-icons a{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,0.05);
-  animation: neonColor 4s infinite alternate;
-  transition: transform 0.3s;
-}
-
-.social-icons a:hover{
-  transform: scale(1.2) rotate(-5deg);
-}
-
-.social-icons img{
-  width:24px;
-  filter: brightness(1.2);
-}
- <script>
-
-
-<footer>
-© 2026 | Designed with ❤️ by Gourav Yadav
-</footer>
