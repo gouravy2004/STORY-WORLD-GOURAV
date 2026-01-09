@@ -7,78 +7,210 @@ SHAYARI FOR GOURAVYADAV
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* =========================
+   🎨 THEME VARIABLES
+========================= */
+:root{
+  --pink:#ff69b4;
+  --darkpink:#ff1493;
+
+  --bg-dark:linear-gradient(135deg,#330033,#660066,#990099);
+  --bg-light:linear-gradient(135deg,#ffffff,#ffe6f0,#ffcce6);
+
+  --text-dark:#ffffff;
+  --text-light:#000000;
+
+  --card-dark:rgba(255,255,255,0.12);
+  --card-light:rgba(255,105,180,0.08);
+}
+
+/* =========================
+   🌍 GLOBAL
+========================= */
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#fff0f6;
+  font-family:Segoe UI, sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-dark);
+  transition:0.5s;
 }
 
-/* Header */
-header{
-  background:#ff5fa2;
-  color:white;
-  padding:20px;
+h1{
   text-align:center;
-  font-size:24px;
-  font-weight:bold;
+  padding:18px;
+  color:var(--pink);
+  text-shadow:0 0 10px rgba(255,105,180,0.6);
 }
 
-/* Category Menu */
-nav{
-  display:flex;
-  overflow-x:auto;
-  background:white;
-  padding:10px;
-  gap:10px;
-}
-nav button{
-  border:none;
-  background:#ffd6e8;
-  color:#ff2f7d;
-  padding:10px 18px;
+/* =========================
+   🔘 THEME BUTTON
+========================= */
+#themeToggle{
+  padding:8px 22px;
   border-radius:25px;
+  border:none;
+  background:var(--pink);
+  color:#fff;
   font-weight:bold;
   cursor:pointer;
-}
-nav button:hover{
-  background:#ff5fa2;
-  color:white;
+  box-shadow:0 0 15px var(--pink);
 }
 
-/* Shayari Card */
+/* =========================
+   📦 LAYOUT
+========================= */
 .container{
-  padding:15px;
-}
-.card{
-  background:white;
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:20px;
-  box-shadow:0 8px 18px rgba(255,95,162,0.2);
-}
-.card h3{
-  color:#ff2f7d;
-  margin-bottom:10px;
-}
-.card p{
-  color:#444;
-  line-height:1.8;
-  font-size:16px;
-  white-space:pre-line;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
-/* Footer */
-footer{
-  text-align:center;
+.column{
+  background:var(--card-dark);
   padding:15px;
-  background:#ff5fa2;
-  color:white;
-  font-size:14px;
+  border-radius:18px;
+  transition:0.4s;
+}
+.column:hover{
+  transform:translateY(-6px);
+}
+
+.column h2{
+  text-align:center;
+  color:var(--pink);
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding-bottom:8px;
+}
+
+/* =========================
+   ✍ SHAYARI
+========================= */
+.shayari{
+  background:rgba(255,255,255,0.15);
+  padding:14px;
+  margin:14px 0;
+  border-radius:14px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* =========================
+   ❤️ BUTTONS
+========================= */
+.btns{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.copy-btn,
+.like-btn{
+  background:var(--pink);
+  border:none;
+  padding:6px 16px;
+  border-radius:20px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+.copy-btn:hover,
+.like-btn:hover{
+  background:var(--darkpink);
+  transform:scale(1.1);
+}
+
+/* =========================
+   🌙 LIGHT THEME
+========================= */
+.light-theme{
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+.light-theme .column{
+  background:var(--card-light);
+}
+.light-theme .shayari{
+  background:rgba(255,192,203,0.25);
+}
+
+/* =========================
+   📱 MOBILE
+========================= */
+@media(max-width:600px){
+  h1{font-size:20px;}
+  .copy-btn,.like-btn{width:100%;}
 }
 </style>
 </head>
 
 <body>
+
+<h1>🌸 Gourav Shayari World 🌸</h1>
+
+<div style="text-align:center;margin-bottom:15px;">
+  <button id="themeToggle">🌙 Dark / Light Mode</button>
+</div>
+
+<div class="container">
+
+<!-- LOVE -->
+<div class="column">
+<h2>💖 Love</h2>
+
+<div class="shayari">
+तेरी एक मुस्कान मेरी दुनिया बदल देती है,  
+तेरी एक बात मेरी हर तकलीफ मिटा देती है।  
+तू पास हो तो सब आसान लगता है,  
+तू दूर हो तो दिल वीरान लगता है।  
+</div>
+
+<div class="btns">
+<button class="copy-btn">Copy</button>
+<button class="like-btn">❤️ Like</button>
+</div>
+</div>
+
+<!-- SAD -->
+<div class="column">
+<h2>💔 Sad</h2>
+
+<div class="shayari">
+खामोशी भी अब सवाल करने लगी है,  
+आँखें भी सच बोलने लगी हैं।  
+जिसे अपना समझा वही दूर चला गया,  
+अब तन्हाई भी अपनी सी लगने लगी है।
+</div>
+
+<div class="btns">
+<button class="copy-btn">Copy</button>
+<button class="like-btn">❤️ Like</button>
+</div>
+</div>
+
+</div>
+
+<script>
+/* THEME */
+document.getElementById("themeToggle").onclick=()=>{
+  document.body.classList.toggle("light-theme");
+}
+
+/* COPY */
+document.querySelectorAll(".copy-btn").forEach(btn=>{
+  btn.onclick=()=>{
+    const text=btn.parentElement.previousElementSibling.innerText;
+    navigator.clipboard.writeText(text);
+    btn.innerText="Copied!";
+    setTimeout(()=>btn.innerText="Copy",1000);
+  }
+});
+</script>
+
+</body>
+</html>
+
 
 
 <h1>✨ Gourav Shayari World ✨</h1>
