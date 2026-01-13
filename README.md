@@ -1,5 +1,4 @@
 ❤️STORY WORLD ❤️
-<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
@@ -62,14 +61,14 @@ body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);}
   </div>
 </div>
 
-<div class="footer">© 2026 Gourav Yadav</div>
+<div class="footer">© 2026 designed Gourav Yadav</div>
 
 <!-- ADMIN PANEL -->
 <div id="adminPanel">
 <div>
 <h3>Admin Panel</h3>
 <div id="loginBox">
-<input id="adminPass" type="password" placeholder="Enter Password">
+<input id="adminPass" type="password" placeholder="gouravyadav272004">
 <button onclick="adminLogin()">Login</button>
 </div>
 <div id="storyBoxAdmin" style="display:none">
