@@ -74,7 +74,7 @@ body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);}
 <div>
 <h3>Admin Panel Login</h3>
 <div id="loginBox">
-<input id="adminUser" type="text" placeholder="Username">
+<input id="adminUser" type="text" placeholder="Enter Username"">
 <input id="adminPass" type="password" placeholder="Password">
 <button onclick="adminLogin()">Login</button>
 </div>
@@ -88,7 +88,7 @@ body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);}
   <option value="attitude">Attitude</option>
   <option value="life">Life</option>
 </select>
-<textarea id="adminStory" rows="8" placeholder="हर लाइन नई line में लिखें"></textarea>
+<textarea id=""adminStory" rows="8" placeholder="हर लाइन नई line में लिखें"></textarea>
 <button class="addBtn" onclick="saveStory()">➕ Add Story</button>
 <button class="closeBtn" onclick="closeAdmin()">❌ Close</button>
 </div>
@@ -147,10 +147,10 @@ function closeAdmin(){document.getElementById("adminPanel").style.display="none"
 function adminLogin(){
   let user=document.getElementById("adminUser").value.trim();
   let pass=document.getElementById("adminPass").value.trim();
-  if(user==="Gourav" && pass==="admin123"){
+  if(user==="storyworld02" && pass==="gourav123"){
     document.getElementById("loginBox").style.display="none";
     document.getElementById("storyBoxAdmin").style.display="block";
-  } else { alert(" storyworld02 or gourav123"); }
+  } else { alert("❌ Wrong Username or Password "); }
 }
 function saveStory(){
   let cat=document.getElementById("adminCategory").value;
