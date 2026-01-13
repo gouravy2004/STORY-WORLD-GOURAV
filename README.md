@@ -68,7 +68,7 @@ body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);}
 <div>
 <h3>Admin Panel</h3>
 <div id="loginBox">
-<input id="adminPass" type="password" placeholder="gouravyadav272004">
+<input id="adminPass" type="password" placeholder="Enter Password">
 <button onclick="adminLogin()">Login</button>
 </div>
 <div id="storyBoxAdmin" style="display:none">
@@ -150,7 +150,7 @@ function toggleTheme(){document.body.classList.toggle("dark")}
 // ADMIN PANEL
 function openAdmin(){document.getElementById("adminPanel").style.display="flex";}
 function closeAdmin(){document.getElementById("adminPanel").style.display="none";}
-function adminLogin(){let pass=document.getElementById("adminPass").value;if(pass==="admin123"){document.getElementById("loginBox").style.display="none";document.getElementById("storyBoxAdmin").style.display="block";}else{alert("❌ Wrong Password");}}
+function adminLogin(){let pass=document.getElementById("adminPass").value;if(pass==="admin123"){document.getElementById("loginBox").style.display="none";document.getElementById("storyBoxAdmin").style.display="block";}else{alert("gouravy2004");}}
 function saveStory(){let cat=document.getElementById("adminCategory").value;let text=document.getElementById("adminStory").value.trim();if(!text)return alert("Story लिखो");let lines=text.split("\n").filter(l=>l.trim()!=="");if(!stories[cat])stories[cat]=[];stories[cat].push(lines);localStorage.setItem("storiesData",JSON.stringify(stories));alert("✅ Story Added Successfully");document.getElementById("adminStory").value="";loadStory();}
 
 loadStory();
