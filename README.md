@@ -1,170 +1,297 @@
-❤️STORY WORLD ❤️
+
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<title>Gourav Yadav Story World</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-:root{--bg:#fff;--text:#111;--card:#ffe6f0;--btn:#ff4d6d;}
-body.dark{--bg:#111;--text:#fff;--card:#1a1a1a;--btn:#ff4d6d;}
-body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);}
-.header{text-align:center;padding:18px;font-size:24px;font-weight:bold;color:#ff4d6d;}
-.theme-btn{position:fixed;top:10px;right:10px;padding:8px 14px;border:none;border-radius:20px;background:var(--btn);color:#fff;cursor:pointer;z-index:10;}
-.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:12px;}
-.categories button{padding:7px 14px;border:none;border-radius:18px;background:#ccc;font-weight:bold;cursor:pointer;}
-.categories button.active{background:var(--btn);color:#fff;}
-.story-container{max-width:420px;height:75vh;margin:auto;background:var(--card);border-radius:22px;padding:18px;box-shadow:0 0 25px rgba(255,77,109,.5);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;}
-.story-line{opacity:0;margin:7px 0;font-size:18px;animation:fade .8s forwards;}
-@keyframes fade{to{opacity:1}}
-.progress{width:90%;height:5px;background:#ccc;border-radius:5px;overflow:hidden;margin-bottom:10px;}
-.progress-bar{height:100%;width:0;background:var(--btn);animation:load 10s linear forwards;}
-@keyframes load{to{width:100%}}
-.dots{display:flex;gap:6px;margin-top:10px}
-.dot{width:9px;height:9px;background:#bbb;border-radius:50%}
-.dot.active{background:var(--btn)}
-.actions{display:flex;gap:12px;margin-top:14px;}
-.actions button{padding:7px 15px;border:none;border-radius:20px;background:var(--btn);color:#fff;font-weight:bold;cursor:pointer;}
-.footer{text-align:center;padding:15px;color:#ff4d6d}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GouravShayariHub - By Gaurav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --bg-dark: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-color: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-/* Admin Panel Custom */
-#adminPanel{display:none;position:fixed;inset:0;z-index:999;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
-#adminPanel > div{background:linear-gradient(135deg,#ff4d6d,#ff85b3);color:#fff;width:90%;max-width:400px;padding:25px;border-radius:25px;box-shadow:0 0 20px rgba(0,0,0,0.5);transform:scale(0);opacity:0;transition:0.3s;}
-#adminPanel.show > div{transform:scale(1);opacity:1;}
-#adminPanel h3{text-align:center;color:#fff;margin-bottom:15px;font-size:22px;}
-#adminPanel input,#adminPanel textarea,#adminPanel select{width:100%;margin:10px 0;padding:12px;border-radius:12px;border:none;}
-#adminPanel textarea{resize:none;}
-#adminPanel button{width:100%;padding:12px;border:none;border-radius:25px;margin-top:8px;cursor:pointer;font-weight:bold;}
-#adminPanel button.addBtn{background:#fff;color:#ff4d6d;}
-#adminPanel button.closeBtn{background:#333;color:#fff;}
-#loginBox input{background:rgba(255,255,255,0.3);color:#fff;}
-#loginBox button{background:#fff;color:#ff4d6d;}
-</style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Background Animation */
+        .bg-blob {
+            position: fixed;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, #ec4899, transparent 70%);
+            opacity: 0.3;
+            filter: blur(80px);
+            z-index: -1;
+            animation: moveBlob 10s infinite alternate;
+        }
+        .bg-blob:nth-child(2) {
+            background: radial-gradient(circle, #8b5cf6, transparent 70%);
+            right: 0; bottom: 0; animation-delay: -5s;
+        }
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        /* Header */
+        header { text-align: center; padding: 40px 20px; }
+        header h1 { 
+            font-size: 3rem; margin: 0; 
+            background: linear-gradient(to right, #fff, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        header p { color: var(--text-muted); }
+
+        /* Search & Categories */
+        .controls { text-align: center; margin-bottom: 40px; padding: 0 20px; }
+        #searchInput {
+            padding: 12px 20px; width: 100%; max-width: 400px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-radius: 50px; color: white; outline: none; margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .categories button {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            color: var(--text-muted); padding: 8px 20px; border-radius: 20px;
+            cursor: pointer; margin: 5px; transition: 0.3s;
+        }
+        .categories button.active, .categories button:hover {
+            background: var(--accent-color); color: white; border-color: var(--accent-color);
+        }
+
+        /* Grid */
+        .container {
+            max-width: 1000px; margin: 0 auto; padding: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            flex: 1; /* Pushes footer down */
+        }
+
+        /* Cards */
+        .card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            border: 1px solid var(--glass-border); border-radius: 20px; padding: 25px;
+            backdrop-filter: blur(10px); transition: 0.4s; position: relative;
+        }
+        .card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.3); }
+
+        .shayari-content {
+            font-size: 1.1rem; line-height: 1.6; text-align: center; margin: 20px 0; color: #e2e8f0;
+        }
+
+        .card-actions {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid var(--glass-border); padding-top: 15px; margin-top: 15px;
+        }
+        .tag { font-size: 0.8rem; text-transform: uppercase; color: #a78bfa; font-weight: bold; }
+        
+        .btn-group button {
+            background: none; border: none; color: var(--text-muted);
+            font-size: 1.1rem; margin-left: 10px; cursor: pointer; transition: 0.3s;
+        }
+        .btn-group button:hover { color: white; transform: scale(1.2); }
+        .btn-image { color: #facc15 !important; }
+
+        /* --- MODAL (POPUP) --- */
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            align-items: center; justify-content: center; flex-direction: column;
+        }
+
+        #captureArea {
+            width: 320px; height: 320px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 30px; box-sizing: border-box; text-align: center;
+            border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .theme-love { background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) !important; color: #333 !important; }
+        .theme-sad { background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) !important; color: #333 !important; }
+        .theme-dark { background: linear-gradient(45deg, #000000, #434343) !important; color: #fff !important; }
+
+        #imgShayariText { font-size: 1.4rem; font-weight: 600; line-height: 1.5; }
+        .watermark { margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 1.2rem; opacity: 0.8; }
+
+        .modal-actions { margin-top: 20px; display: flex; gap: 10px; }
+        .modal-btn { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-download { background: #22c55e; color: white; }
+        .btn-close { background: #ef4444; color: white; }
+
+        /* --- FOOTER BY GAURAV --- */
+        footer {
+            text-align: center; padding: 30px 20px; margin-top: 50px;
+            border-top: 1px solid var(--glass-border); background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        footer p { margin: 0; font-size: 1rem; color: var(--text-muted); }
+        .designer-name {
+            color: var(--accent-color); font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; text-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.4); }
+            to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.9), 0 0 10px #fff; }
+        }
+
+    </style>
 </head>
-<body class="dark">
+<body>
 
-<div class="header">Gourav Yadav Story World ❤️</div>
-<button class="theme-btn" onclick="toggleTheme()">🌙 Theme</button>
-<button class="theme-btn" style="left:10px;right:auto" onclick="openAdmin()">📝 Admin</button>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
 
-<div class="categories">
-  <button class="active" onclick="changeCategory('love',this)">❤️ Love</button>
-  <button onclick="changeCategory('sad',this)">💔 Sad</button>
-  <button onclick="changeCategory('horror',this)">👻 Horror</button>
-  <button onclick="changeCategory('motivation',this)">💪 Motivation</button>
-  <button onclick="changeCategory('friendship',this)">🤝 Friendship</button>
-  <button onclick="changeCategory('attitude',this)">😎 Attitude</button>
-  <button onclick="changeCategory('life',this)">🌙 Life</button>
-</div>
+    <header>
+        <h1>GouravShayari Hub</h1>
+        <p>Select. Create. Share.</p>
+    </header>
 
-<div class="story-container" id="storyBox">
-  <div class="progress"><div class="progress-bar" id="bar"></div></div>
-  <div id="storyText"></div>
-  <div class="dots" id="dots"></div>
-  <div class="actions">
-    <button onclick="likeStory()">❤️ Like</button>
-    <button onclick="copyStory()">📋 Copy</button>
-    <button onclick="toggleVoice()" id="voiceBtn">▶️ Play Voice</button>
-  </div>
-</div>
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search Feelings..." onkeyup="searchShayari()">
+        <div class="categories">
+            <button class="active" onclick="filterShayari('all')">All</button>
+            <button onclick="filterShayari('Love')">❤️ Love</button>
+            <button onclick="filterShayari('Sad')">💔 Sad</button>
+            <button onclick="filterShayari('Attitude')">😎 Attitude</button>
+            <button onclick="filterShayari('Friendship')">🤝 Friendship</button>
+        </div>
+    </div>
 
-<div class="footer">© 2026 Gourav Yadav</div>
+    <div class="container" id="shayariContainer"></div>
 
-<!-- Admin Panel -->
-<div id="adminPanel">
-<div>
-<h3>Admin Panel Login</h3>
-<div id="loginBox">
-<input id="adminUser" type="text" placeholder="storldworld02">
-<input id="adminPass" type="password" placeholder="gourav123">
-<button onclick="adminLogin()">Login</button>
-</div>
-<div id="storyBoxAdmin" style="display:none">
-<select id="adminCategory">
-  <option value="love">Love</option>
-  <option value="sad">Sad</option>
-  <option value="horror">Horror</option>
-  <option value="motivation">Motivation</option>
-  <option value="friendship">Friendship</option>
-  <option value="attitude">Attitude</option>
-  <option value="life">Life</option>
-</select>
-<textarea id=""adminStory" rows="8" placeholder="हर लाइन नई line में लिखें"></textarea>
-<button class="addBtn" onclick="saveStory()">➕ Add Story</button>
-<button class="closeBtn" onclick="closeAdmin()">❌ Close</button>
-</div>
-</div>
-</div>
+    <div class="modal" id="imageModal">
+        <div id="captureArea">
+            <i class="fas fa-quote-left" style="opacity:0.5; margin-bottom:10px;"></i>
+            <div id="imgShayariText">Loading...</div>
+            <div class="watermark">- Designed by Gaurav -</div>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn" onclick="changeTheme()">🎨 Change Color</button>
+            <button class="modal-btn btn-download" onclick="downloadImage()"><i class="fas fa-download"></i> Save</button>
+            <button class="modal-btn btn-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
-<script>
-let stories = {love:[],sad:[],horror:[],motivation:[],friendship:[],attitude:[],life:[]};
-let saved = localStorage.getItem("storiesData");
-if(saved){Object.assign(stories, JSON.parse(saved));}
+    <footer>
+        <p>Designed with <i class="fas fa-heart" style="color: #ef4444; animation: pop 1s infinite;"></i> by <span class="designer-name">Gauravyadav</span></p>
+    </footer>
 
-let current="love",i=0;
-const storyText=document.getElementById("storyText");
-const dots=document.getElementById("dots");
-const bar=document.getElementById("bar");
-const voiceBtn=document.getElementById("voiceBtn");
-let synth=window.speechSynthesis,voiceOn=false,utter;
+    <script>
+        const shayaris = [
+            { id: 1, text: "Mohabbat mein jhukna koi ajeeb baat nahi,<br>Chamakta suraj bhi dhalta hai chand ke liye.", category: "Love" },
+            { id: 2, text: "Na pesh-e-nazar, na nigah-e-shauq,<br>Tera milna bhi ek khwab lagta hai.", category: "Love" },
+            { id: 3, text: "Tum sirf mere ho, ab ise haq samjho<br>Ya kabza... baat khatam.", category: "Love" },
+            { id: 4, text: "Suno..!! Zyada baat nahi karni,<br>Bas gale lag kar rona hai tumhare.", category: "Love" },
+            { id: 5, text: "Ishq wo khel nahi jo chhote dil wale khele,<br>Rooh tak kaanp jaati hai, sadme sahte sahte.", category: "Love" },
+            { id: 6, text: "Meri har saans mein tu hai,<br>Meri har khushi mein tu hai,<br>Tere bina zindagi kuch nahi.", category: "Love" },
+            { id: 7, text: "Hum to bane hi the tabah hone ke liye,<br>Tera milna to bas ek bahana ban gaya.", category: "Sad" },
+            { id: 8, text: "Kaash tum maut hoti,<br>Toh ek din zaroor meri hoti.", category: "Sad" },
+            { id: 9, text: "Tumhare baad hum jiske bhi honge,<br>Us rishte ka naam majboori hoga.", category: "Sad" },
+            { id: 10, text: "Badi himmat di hai uski judai ne,<br>Na kisi ko khone ka darr hai, na kisi ko paane ki chahat.", category: "Sad" },
+            { id: 11, text: "Sher khud apni takat se raja kahlata hai,<br>Jungle mein chunav nahi hote.", category: "Attitude" },
+            { id: 12, text: "Log kehte hain ki mera dil patthar ka hai,<br>Lekin kuch log aise bhi the jo ise bhi tod gaye.", category: "Attitude" },
+            { id: 13, text: "Hum wahan khade hote hain,<br>Jahan matter bade hote hain.", category: "Attitude" },
+            { id: 14, text: "Na block kiya hai, na block karenge,<br>Tujhe to apni tarakki se jalayenge.", category: "Attitude" },
+            { id: 15, text: "Waqt ki yaari to har koi karta hai mere dost,<br>Mazaa to tab hai jab waqt badle par yaar na badle.", category: "Friendship" }
+        ];
 
-function loadStory(){
- storyText.innerHTML="";
- bar.style.animation="none";bar.offsetHeight;bar.style.animation="load 10s linear forwards";
- if(stories[current][i]){
-   stories[current][i].forEach((l,idx)=>{
-     let d=document.createElement("div");
-     d.className="story-line";
-     d.style.animationDelay=`${idx*0.5}s`;
-     d.innerText=l;
-     storyText.appendChild(d);
-   });
- }
- dots.innerHTML="";
- stories[current].forEach((_,x)=>{
-   let dot=document.createElement("div");
-   dot.className="dot"+(x===i?" active":"");
-   dots.appendChild(dot);
- });
- speakStory();
-}
-function changeCategory(cat,btn){current=cat;i=0;document.querySelectorAll(".categories button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");loadStory();}
-function likeStory(){alert("❤️ Story Liked")}
-function copyStory(){if(stories[current][i]){navigator.clipboard.writeText(stories[current][i].join("\n"));alert("📋 Story Copied");}}
-function toggleVoice(){voiceOn=!voiceOn;voiceBtn.innerText=voiceOn?"⏸ Pause Voice":"▶️ Play Voice";if(!voiceOn)synth.cancel();else speakStory();}
-function speakStory(){if(!voiceOn)return;if(synth.speaking)synth.cancel();if(stories[current][i]){utter=new SpeechSynthesisUtterance(stories[current][i].join(" । "));utter.lang="hi-IN";utter.rate=0.9;synth.speak(utter);}}
-let sx=0;
-const storyBox=document.getElementById("storyBox");
-storyBox.addEventListener("touchstart",e=>sx=e.touches[0].clientX);
-storyBox.addEventListener("touchend",e=>{let d=sx-e.changedTouches[0].clientX;if(Math.abs(d)>30){i=d>0?(i+1)%stories[current].length:(i-1+stories[current].length)%stories[current].length;loadStory();}});
-storyBox.addEventListener("mousedown",e=>sx=e.clientX);
-storyBox.addEventListener("mouseup",e=>{let d=sx-e.clientX;if(Math.abs(d)>30){i=d>0?(i+1)%stories[current].length:(i-1+stories[current].length)%stories[current].length;loadStory();}});
-function toggleTheme(){document.body.classList.toggle("dark")}
-loadStory();
+        const container = document.getElementById('shayariContainer');
+        const modal = document.getElementById('imageModal');
+        const captureArea = document.getElementById('captureArea');
+        const imgText = document.getElementById('imgShayariText');
 
-// Admin
-function openAdmin(){document.getElementById("adminPanel").style.display="flex";document.getElementById("adminPanel").classList.add("show");}
-function closeAdmin(){document.getElementById("adminPanel").style.display="none";document.getElementById("adminPanel").classList.remove("show");}
-function adminLogin(){
-  let user=document.getElementById("adminUser").value.trim();
-  let pass=document.getElementById("adminPass").value.trim();
-  if(user==="storyworld02" && pass==="gourav123"){
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("storyBoxAdmin").style.display="block";
-  } else { alert("❌ Wrong Username or Password "); }
-}
-function saveStory(){
-  let cat=document.getElementById("adminCategory").value;
-  let text=document.getElementById("adminStory").value.trim();
-  if(!text) return alert("Story लिखो");
-  let lines=text.split("\n").filter(l=>l.trim()!=="");
-  if(!stories[cat]) stories[cat]=[];
-  stories[cat].push(lines);
-  localStorage.setItem("storiesData",JSON.stringify(stories));
-  alert("✅ Story Added Successfully");
-  document.getElementById("adminStory").value="";
-  loadStory();
-}
-</script>
+        // Render Cards
+        function displayShayaris(data) {
+            container.innerHTML = '';
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="shayari-content" id="text-${item.id}">${item.text}</div>
+                    <div class="card-actions">
+                        <span class="tag">${item.category}</span>
+                        <div class="btn-group">
+                            <button class="btn-image" onclick="openGenerator('${item.text.replace(/'/g, "\\'")}')" title="Create Image"><i class="fas fa-image"></i></button>
+                            <button onclick="copyText('text-${item.id}')"><i class="far fa-copy"></i></button>
+                            <button class="btn-whatsapp" onclick="shareWhatsapp('${item.text}')"><i class="fab fa-whatsapp"></i></button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- IMAGE GENERATOR LOGIC ---
+        function openGenerator(text) {
+            modal.style.display = 'flex';
+            imgText.innerHTML = text;
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        const themes = ['', 'theme-love', 'theme-sad', 'theme-dark'];
+        let currentTheme = 0;
+        function changeTheme() {
+            currentTheme = (currentTheme + 1) % themes.length;
+            captureArea.className = '';
+            if(themes[currentTheme]) captureArea.classList.add(themes[currentTheme]);
+        }
+
+        function downloadImage() {
+            html2canvas(captureArea, { scale: 2, backgroundColor: null }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'shayari-by-gaurav.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+
+        // --- UTILS ---
+        function filterShayari(category) {
+            document.querySelectorAll('.categories button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            category === 'all' ? displayShayaris(shayaris) : displayShayaris(shayaris.filter(s => s.category === category));
+        }
+
+        function searchShayari() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            displayShayaris(shayaris.filter(s => s.text.toLowerCase().includes(q) || s.category.toLowerCase().includes(q)));
+        }
+
+        function shareWhatsapp(text) {
+            window.open(`https://wa.me/?text=${encodeURIComponent(text.replace(/<br>/g, "\n") + "\n\n- Via ShayariHub")}`, '_blank');
+        }
+
+        function copyText(id) {
+            navigator.clipboard.writeText(document.getElementById(id).innerText);
+            alert("Copied!");
+        }
+
+        displayShayaris(shayaris);
+    </script>
 </body>
 </html>
-
